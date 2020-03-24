@@ -3,6 +3,14 @@ defined('is_running') or die('Not an entry point...');
 
 /* Link to open Bosststrap Dialog with given content*/
 
+
+/* detect Bootstrap4 */
+global $page, $config, $gpLayouts, $addonPathData;
+$layout_arr = $gpLayouts[isset($page->TitleInfo['gpLayout']) ?  $page->TitleInfo['gpLayout'] :  $config['gpLayout']];
+$Bootstrap4 = strtolower($layout_arr['framework']['name']) == 'bootstrap' &&
+	  preg_replace('/[^0-9]/', '', explode('.', $layout_arr['framework']['version'])[0]) == 4;
+
+
 $section = array();
 $section['values'] = array_merge(array(
   'link'				=> 'Open in modal',
@@ -60,14 +68,17 @@ $modal_dialog_class .= $section['values']['md_size'] == 'extra' ? ' modal-xl' : 
 $modal_dialog_class .= $section['values']['md_center'] == '1' ? ' modal-dialog-centered' : '';
 $modal_dialog_class .= $section['values']['md_scroll'] == '1' ? ' modal-dialog-scrollable' : '';
 
+$modal_close_button = '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
+
 // Modal dialog
 $section['content'] .= '
     <div id="'.$modalID.'" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog'.$modal_dialog_class.'" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+					'.($Bootstrap4 ? '' : $modal_close_button).'
                     <h4 class="item-modal-title">{{title}}</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					'.($Bootstrap4 ? $modal_close_button : '').'
                 </div>
 				<div class="modal-body">
 				{{content}}
