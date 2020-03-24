@@ -15,7 +15,7 @@ The plugin adds section with link or button to open  Bootstrap Modal dialog with
 ## Requirements
 * Typesetter CMS
 * CustomSections addon installed.
-* Bootstrap 4 theme
+* Bootstrap 3 or 4 theme
 
 ## Manual Installation
 1. Download the [master ZIP archive](https://github.com/mahotilo/CS.mh_Modal/archive/master.zip)
