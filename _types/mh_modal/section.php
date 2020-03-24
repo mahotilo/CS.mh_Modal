@@ -5,7 +5,7 @@ defined('is_running') or die('Not an entry point...');
 
 $section = array();
 $section['values'] = array_merge(array(
-  'link'				=> 'open in modal',
+  'link'				=> 'Open in modal',
   'style'				=> 'link',
   'add_icon'			=> '0',
   'title'				=> 'Title',
