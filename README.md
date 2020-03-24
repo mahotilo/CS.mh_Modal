@@ -4,9 +4,9 @@
 The plugin adds section with link or button to open  Bootstrap Modal dialog with user defined content
 
 ## See also 
-* [Typesetter Home](http://www.typesettercms.com)
-* [Typesetter on GitHub](https://github.com/Typesetter/Typesetter)
 * [CustomSections](https://github.com/juek/CustomSections)
+* [Typesetter on GitHub](https://github.com/Typesetter/Typesetter)
+* [Typesetter Home](http://www.typesettercms.com)
 
 ## Current Version 
 1.0
