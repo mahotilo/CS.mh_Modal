@@ -1,4 +1,4 @@
-# mh_Modal 'mh Modal dialog' (https://github.com/mahotilo/CS.mh_Modal) - Bootstrap Modal dialog section type for CustomSections plugin (Typesetter CMS)
+# [mh_Modal 'mh Modal dialog'](https://github.com/mahotilo/CS.mh_Modal) - Bootstrap Modal dialog section type for CustomSections plugin (Typesetter CMS)
 
 ## About
 The plugin adds section with link or button to open  Bootstrap Modal dialog with user defined content
