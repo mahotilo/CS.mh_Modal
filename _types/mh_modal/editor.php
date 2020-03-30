@@ -38,6 +38,41 @@ $editor = array(
     // value 'style' --end
 
 
+    // value 'color' --start
+    'color' => array(
+      'label' => '<i class="fa fa-link"></i> '.$editor_lang['Color'],
+      'control_type' => 'select',
+      'options' => array(
+        'primary' 	=> 'primary',
+        'secondary' => 'secondary',
+        'success' 	=> 'success',
+        'danger' 	=> 'danger',
+        'warning' 	=> 'warning',
+        'info' 		=> 'info',
+        'light' 	=> 'light',
+        'dark' 		=> 'dark',
+        'link' 		=> 'link',
+      ),
+      'attributes' => array(),
+      'on' => array(),
+    ), 
+    // value 'color' --end
+
+
+    // value 'icon' --start
+    'icon' => array(
+      'label' => '<i class="fa fa-flag"></i> '.$editor_lang['Icon'],
+      'control_type' => 'iconpicker',
+      'attributes' => array(
+        // 'placeholder' => 'fa fa-flag',
+      ),
+      'on' => array(
+        // 'focus' => 'function(){ $(this).select(); }',
+      ),
+    ), 
+    // value 'icon' --end
+
+
     // value 'add_icon' --start
     'add_icon' => array(
       'label' => '<i class="fa fa-external-link"></i> '.$editor_lang['Add_icon'],

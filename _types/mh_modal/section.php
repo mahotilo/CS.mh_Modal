@@ -3,18 +3,12 @@ defined('is_running') or die('Not an entry point...');
 
 /* Link to open Bosststrap Dialog with given content*/
 
-
-/* detect Bootstrap4 */
-global $page, $config, $gpLayouts, $addonPathData;
-$layout_arr = $gpLayouts[isset($page->TitleInfo['gpLayout']) ?  $page->TitleInfo['gpLayout'] :  $config['gpLayout']];
-$Bootstrap4 = strtolower($layout_arr['framework']['name']) == 'bootstrap' &&
-	  preg_replace('/[^0-9]/', '', explode('.', $layout_arr['framework']['version'])[0]) == 4;
-
-
 $section = array();
 $section['values'] = array_merge(array(
-  'link'				=> 'Open in modal',
+  'link'				=> 'open in modal',
   'style'				=> 'link',
+  'color'				=> 'success',
+  'icon'				=> 'fa-file-text-o',
   'add_icon'			=> '0',
   'title'				=> 'Title',
   'content'				=> '<p>
@@ -43,19 +37,20 @@ $section['content'] .= '
 <div class="mh-modal">
 ';
 
-$icon = $section['values']['add_icon'] ? '&nbsp;<i class="fa fa-external-link"></i>': '';
+$iconS = $section['values']['icon'] ? '<i class="fa {{icon}}"></i>&nbsp;': '';
+$iconE = $section['values']['add_icon'] ? '&nbsp;<i class="fa fa-external-link"></i>': '';
 
 // link/button
 if ( $section['values']['style'] == 'button' ) {
 	$section['content'] .= '
-	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#'.$modalID.'">
-		{{link}}'.$icon.'
+	<button type="button" class="btn btn-{{color}}" data-toggle="modal" data-target="#'.$modalID.'">
+		'.$iconS.'{{link}}'.$iconE.'
 	</button>
 	';
 } else {
 	$section['content'] .= '
-	<a href="#" data-toggle="modal" data-target="#'.$modalID.'">
-		{{link}}'.$icon.'
+	<a href="#" data-toggle="modal" data-target="#'.$modalID.'" class="text-{{color}}">
+		'.$iconS.'{{link}}'.$iconE.'
 	</a>
 	';
 }
@@ -68,17 +63,14 @@ $modal_dialog_class .= $section['values']['md_size'] == 'extra' ? ' modal-xl' : 
 $modal_dialog_class .= $section['values']['md_center'] == '1' ? ' modal-dialog-centered' : '';
 $modal_dialog_class .= $section['values']['md_scroll'] == '1' ? ' modal-dialog-scrollable' : '';
 
-$modal_close_button = '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>';
-
 // Modal dialog
 $section['content'] .= '
     <div id="'.$modalID.'" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog'.$modal_dialog_class.'" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-					'.($Bootstrap4 ? '' : $modal_close_button).'
                     <h4 class="item-modal-title">{{title}}</h4>
-					'.($Bootstrap4 ? $modal_close_button : '').'
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
 				<div class="modal-body">
 				{{content}}

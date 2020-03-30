@@ -10,7 +10,7 @@ The plugin adds section with link or button to open  Bootstrap Modal dialog with
 * [Typesetter Home](http://www.typesettercms.com)
 
 ## Current Version 
-1.0
+1.1
 
 ## Requirements
 * Typesetter CMS
@@ -35,3 +35,6 @@ The plugin adds section with link or button to open  Bootstrap Modal dialog with
 
 ## License
 GPL 2, for bundled thirdparty components see the respective subdirectories.
+
+## Changelog
+* v1.1 Add icon before button text
