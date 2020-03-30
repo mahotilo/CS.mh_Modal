@@ -38,5 +38,5 @@ GPL 2, for bundled thirdparty components see the respective subdirectories.
 
 ## Changelog
 * v1.1 
- - Add icon before button text
- - Style for iframe sizing in modal dialog
+	- Add icon before button text
+	- Style for iframe sizing in modal dialog
