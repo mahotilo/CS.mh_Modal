@@ -1,6 +1,5 @@
 <?php
 defined('is_running') or die('Not an entry point...');
-/* My Shop Item */
 /* ENGLISH */
 
 $section_lang = array(
