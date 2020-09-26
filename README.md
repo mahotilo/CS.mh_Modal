@@ -1,5 +1,5 @@
 ![](_types/mh_modal/ui_icon.png)
-# [mh_Modal (mh Modal dialog)](https://github.com/mahotilo/CS.mh_Modal) - Bootstrap Modal dialog.
+# [mh_Modal (mh Modal dialog)](https://github.com/mahotilo/CS.mh_Modal) - Bootstrap Modal dialog
 ## Section type for CustomSections plugin (Typesetter CMS)
 
 ## About
